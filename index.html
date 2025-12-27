@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assam Local Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-background">
+            <img src="./public/assam-1.jpg" alt="Beautiful Assam Landscape" class="header-image">
+            <div class="header-overlay"></div>
+        </div>
+        <div class="container header-content">
+            <h1 class="logo">Assam Local Guide</h1>
+            <p class="tagline">Discover the heart of Assam's culture, food, and festivals</p>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Ask about Assam</h2>
+                <p>Get insights about local food, festivals, traditions, and culture</p>
+                
+                <div class="question-box">
+                    <input 
+                        type="text" 
+                        id="questionInput" 
+                        placeholder="Ask about Assam's food, festivals, or culture..."
+                        class="question-input"
+                    >
+                    <button id="askButton" class="ask-button">Ask</button>
+                </div>
+
+                <!-- System Status Indicator -->
+                <div class="system-status">
+                    <div class="status-indicator">
+                        <span class="status-badge local-status"> Local Cultural Database</span>
+                    </div>
+                    <p class="status-text"> Assam cultural knowledge base</p>
+                </div>
+
+                <div id="responseArea" class="response-area hidden">
+                    <h3>Latest Response:</h3>
+                    <div class="question-display">
+                        <strong>Your Question:</strong> <span id="displayedQuestion"></span>
+                    </div>
+                    <div id="responseText" class="response-text"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="historySection" class="history-section hidden">
+        <div class="container">
+            <div class="history-header">
+                <h2>Search History</h2>
+                <button id="clearHistoryBtn" class="clear-history-btn">Clear History</button>
+            </div>
+            <div id="historyContainer" class="history-container">
+                <!-- History items will be added here dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Show History Button -->
+    <div class="history-toggle">
+        <button id="toggleHistoryBtn" class="toggle-history-btn hidden">
+            <span id="historyBtnText">Show History</span>
+            <span class="history-count" id="historyCount">0</span>
+        </button>
+    </div>
+
+    <!-- Culture Showcase -->
+    <section class="showcase">
+        <div class="container">
+            <h2 class="section-title">Explore Assam</h2>
+            <div class="cards-grid">
+                <div class="culture-card">
+                    <div class="card-image food-bg"></div>
+                    <div class="card-content">
+                        <h3>Traditional Food</h3>
+                        <p>Discover authentic Assamese cuisine and local delicacies</p>
+                    </div>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="card-image festival-bg"></div>
+                    <div class="card-content">
+                        <h3>Festivals</h3>
+                        <p>Experience vibrant celebrations and cultural traditions</p>
+                    </div>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="card-image culture-bg"  ></div>
+                    <div class="card-content">
+                        <h3>Culture & Arts</h3>
+                        <p>Learn about local customs, crafts, and heritage</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p> 2025 Assam Local Guide - Built with Kiro for Hackathon</p>
+            <p>Celebrating Assamese culture and heritage</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

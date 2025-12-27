@@ -1,0 +1,475 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fafafa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: relative;
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+    overflow: hidden;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(45, 80, 22, 0.8) 0%, rgba(74, 124, 89, 0.7) 100%);
+    z-index: 2;
+}
+
+.header-content {
+    position: relative;
+    z-index: 3;
+}
+
+.logo {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Hero Section */
+.hero {
+    padding: 4rem 0;
+    background: white;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    color: #2d5016;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+}
+
+/* Question Box */
+.question-box {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.question-input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.question-input:focus {
+    border-color: #4a7c59;
+}
+
+.ask-button {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #d32f2f 0%, #f44336 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ask-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+}
+
+/* System Status Indicator */
+.system-status {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.status-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.status-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.ai-status {
+    background: linear-gradient(135deg, #4a7c59 0%, #66bb6a 100%);
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+.local-status {
+    background: #f0f4f0;
+    color: #2d5016;
+    border: 1px solid #4a7c59;
+}
+
+.status-text {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Response Area */
+.response-area {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-left: 4px solid #4a7c59;
+    text-align: left;
+}
+
+.response-area h3 {
+    color: #2d5016;
+    margin-bottom: 1rem;
+}
+
+.question-display {
+    background: #e8f5e8;
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 3px solid #4a7c59;
+}
+
+.question-display strong {
+    color: #2d5016;
+}
+
+.response-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+.hidden {
+    display: none;
+}
+
+/* History Section */
+.history-section {
+    padding: 3rem 0;
+    background: #f0f4f0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.history-header h2 {
+    color: #2d5016;
+    font-size: 1.8rem;
+}
+
+.clear-history-btn {
+    padding: 0.5rem 1rem;
+    background: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.clear-history-btn:hover {
+    background: #b71c1c;
+}
+
+.history-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.history-item {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #4a7c59;
+    animation: slideIn 0.3s ease-out;
+}
+
+.history-question {
+    font-weight: 600;
+    color: #2d5016;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.history-response {
+    color: #555;
+    line-height: 1.6;
+}
+
+.history-timestamp {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 0.8rem;
+    text-align: right;
+}
+
+/* History Toggle Button */
+.history-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.toggle-history-btn {
+    background: #4a7c59;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(74, 124, 89, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.toggle-history-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(74, 124, 89, 0.4);
+}
+
+.history-count {
+    background: #d32f2f;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Culture Showcase */
+.showcase {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #2d5016;
+    margin-bottom: 3rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.culture-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.culture-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.food-bg {
+    background-image: url('./public/tredictional.jpeg');
+}
+
+.festival-bg {
+    background-image: url('./public/Festivals.webp');
+}
+
+.culture-bg {
+    background-image: url('./public/cultural.webp');
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    font-size: 1.3rem;
+    color: #2d5016;
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+    background: #2d5016;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .question-box {
+        flex-direction: column;
+    }
+    
+    .ask-button {
+        align-self: center;
+        min-width: 150px;
+    }
+    
+    .header {
+        min-height: 250px;
+        padding: 2rem 0;
+    }
+    
+    .logo {
+        font-size: 2.2rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .history-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    
+    .toggle-history-btn {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.8rem 1.2rem;
+    }
+    
+    .history-item {
+        padding: 1rem;
+    }
+}

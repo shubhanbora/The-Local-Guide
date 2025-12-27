@@ -1,0 +1,31 @@
+{
+  "project": "Assam Local Guide",
+  "theme": "The Local Guide",
+  "workflow": [
+    {
+      "step": 1,
+      "name": "User Input",
+      "description": "The user enters a question related to Assam food, festivals, or culture through the web interface."
+    },
+    {
+      "step": 2,
+      "name": "Input Processing",
+      "description": "The system reads the user input and identifies relevant keywords related to Assam."
+    },
+    {
+      "step": 3,
+      "name": "Context Matching",
+      "description": "The logic matches the user query with information defined in the custom context file (product.md)."
+    },
+    {
+      "step": 4,
+      "name": "Response Generation",
+      "description": "A culturally accurate response is generated based on Assam-specific context."
+    },
+    {
+      "step": 5,
+      "name": "Output Display",
+      "description": "The generated response is displayed in the UI for the user."
+    }
+  ]
+}
