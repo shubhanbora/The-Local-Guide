@@ -1,13 +1,16 @@
 # Assam Local Guide
-
+# Project Team:
+   • **Shubhan Bora** - Lead Developer & Designer
+   • **Rohit Das** - Co-Developer & Cultural Researcher
+   
 A modern web-based cultural assistant for discovering Assam's rich heritage, food, festivals, and traditions.
 
-## 🎯 Project Overview
+##  Project Overview
 
-**Theme**: The Local Guide  
+**Theme**: The Local Guide of Assam
 **Goal**: Build a clean, modern web UI where users can ask questions about Assam's food, festivals, and culture with context-aware behavior.
 
-## 🚀 Features
+##  Features
 
 - **Interactive Q&A System**: Ask questions about Assamese culture and get intelligent responses
 - **Context-Aware Logic**: Smart categorization of queries (food, festivals, culture, general)
@@ -15,14 +18,14 @@ A modern web-based cultural assistant for discovering Assam's rich heritage, foo
 - **Modern UI**: Clean, professional design with cultural color scheme
 - **Responsive Design**: Works seamlessly across different screen sizes
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
 - **No Backend**: Pure client-side implementation
 - **No External APIs**: Self-contained rule-based system
 - **Context System**: Custom logic using local product.md file
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 assam-local-guide/
@@ -34,14 +37,14 @@ assam-local-guide/
     └── product.md      # Cultural context and product information
 ```
 
-## 🎨 Design Philosophy
+##  Design Philosophy
 
 - **Minimal & Elegant**: Clean design that doesn't distract from content
 - **Cultural Colors**: Green and red accents representing Assamese heritage
 - **Soft Aesthetics**: Rounded cards, subtle shadows, and gentle gradients
 - **Professional**: Judge-friendly appearance suitable for hackathon presentation
 
-## 🧠 How It Works
+##  How It Works
 
 ### User Interaction Flow
 1. User enters a question about Assam culture
@@ -57,7 +60,7 @@ The system demonstrates intelligent behavior through:
 - **Confidence Scoring**: Adjusts response style based on match quality
 - **Dynamic Responses**: Multiple possible answers for variety
 
-## 🚀 Getting Started
+##  Getting Started
 
 1. Clone or download the project files
 2. Open `index.html` in any modern web browser
@@ -65,7 +68,7 @@ The system demonstrates intelligent behavior through:
 
 No installation or setup required - it's a pure frontend application.
 
-## 🎪 Hackathon Highlights
+##  Hackathon Highlights
 
 ### Why This Approach?
 - **Fast Development**: No complex AI infrastructure needed
@@ -88,7 +91,7 @@ Kiro accelerated this project by:
 - Create user personalization features
 - Add offline capability with service workers
 
-## 🏆 Built for Hackathon Success
+##  Built for Hackathon Success
 
 This project demonstrates:
 - **Technical Skills**: Modern web development practices
@@ -99,4 +102,4 @@ This project demonstrates:
 
 ---
 
-**Built with ❤️ for celebrating Assamese culture and heritage**
+**Built with  for celebrating Assamese culture and heritage**
