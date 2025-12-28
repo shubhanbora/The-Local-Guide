@@ -251,6 +251,12 @@ class AssamGuide {
             return `📚 Local Guide: ${foodInfo}`;
         }
         
+        // Check for developer/creator queries
+        const developerInfo = this.getDeveloperSpecificResponse(lowerQuestion);
+        if (developerInfo) {
+            return `📚 Local Guide: ${developerInfo}`;
+        }
+        
         // Check for specific district queries
         const districtInfo = this.getDistrictSpecificResponse(lowerQuestion);
         if (districtInfo) {
@@ -369,7 +375,7 @@ class AssamGuide {
             'udalguri': '🏔️ Udalguri in Bhutan foothills is perfect for eco-tourism. It has rich Bodo culture and natural beauty.',
             'west karbi anglong': '🌲 West Karbi Anglong is a hill & forest region with tribal lifestyle. It is less urbanized with traditional communities.',
             'bajali': '🌾 Bajali is a newly formed district with agriculture-based economy. It has deep cultural roots and traditional farming.',
-            'tamulpur': '🆕 Tamulpur is the newest district on Bhutan border. It has great eco & rural tourism potential with natural beauty.'
+            'tamulpur': ' Tamulpur is the newest district on Bhutan border. It has great eco & rural tourism potential with natural beauty.'
         };
 
         for (const [district, info] of Object.entries(districts)) {
@@ -383,11 +389,11 @@ class AssamGuide {
 
     getFestivalSpecificResponse(question) {
         const festivals = {
-            'bihu': `🎉 **BIHU - The Most Important Festival of Assam**
+            'bihu': ` **BIHU - The Most Important Festival of Assam**
 
 Bihu represents Assamese culture, agriculture, and community life. It is closely connected to the farming cycle and seasons.
 
-**🌸 RONGALI BIHU (Bohag Bihu)**
+** RONGALI BIHU (Bohag Bihu)**
 • **When**: April (mid-April, around 14th-15th)
 • **Significance**: Marks the Assamese New Year (1st day of Bohag month)
 • **Duration**: 7 days of celebration
@@ -396,7 +402,7 @@ Bihu represents Assamese culture, agriculture, and community life. It is closely
 • **Special Rituals**: Goru Bihu (cattle worship), Manuh Bihu (human celebration)
 • **Traditional Games**: Buffalo fighting, egg fighting, pot breaking
 
-**🍽️ BHOGALI BIHU (Magh Bihu)**
+** BHOGALI BIHU (Magh Bihu)**
 • **When**: January (mid-January, around 14th-15th)
 • **Significance**: Festival of food and harvest celebration
 • **Duration**: 2-3 days
@@ -413,104 +419,104 @@ Bihu represents Assamese culture, agriculture, and community life. It is closely
 • **Foods**: Simple vegetarian meals
 • **Cultural Significance**: Remembering ancestors, spiritual reflection`,
 
-            'rongali bihu': `🌸 **RONGALI BIHU (Bohag Bihu) - Assamese New Year**
+            'rongali bihu': ` **RONGALI BIHU (Bohag Bihu) - Assamese New Year**
 
 • **Celebrated**: April (mid-April, around 14th-15th)
 • **Significance**: Marks the Assamese New Year (1st day of Bohag month)
 • **Duration**: 7 days of continuous celebration
 • **Season**: Celebrates the beginning of the agricultural season
 
-**🎭 ACTIVITIES & CELEBRATIONS:**
+** ACTIVITIES & CELEBRATIONS:**
 • Bihu dance performances with traditional music
 • Traditional songs and community gatherings
 • Young people wear festive traditional clothes
 • Community participation across all age groups
 
-**👗 TRADITIONAL ATTIRE:**
+** TRADITIONAL ATTIRE:**
 • **Women**: Mekhela Chador (traditional two-piece)
 • **Men**: Dhoti-Kurta with Gamosa (sacred cloth)
 
-**🐄 SPECIAL RITUALS:**
+** SPECIAL RITUALS:**
 • **Goru Bihu**: Cattle worship ceremony
 • **Manuh Bihu**: Human celebration and social bonding
 
-**🎮 TRADITIONAL GAMES:**
+** TRADITIONAL GAMES:**
 • Buffalo fighting competitions
 • Egg fighting contests
 • Pot breaking games
 • Various folk games and competitions`,
 
-            'bhogali bihu': `🍽️ **BHOGALI BIHU (Magh Bihu) - Festival of Food**
+            'bhogali bihu': ` **BHOGALI BIHU (Magh Bihu) - Festival of Food**
 
 • **Celebrated**: January (mid-January, around 14th-15th)
 • **Significance**: Festival of food and harvest celebration
 • **Duration**: 2-3 days of feasting and celebration
 • **Season**: Marks the end of the harvest season
 
-**🏠 SPECIAL STRUCTURES:**
+** SPECIAL STRUCTURES:**
 • **Meji**: Temporary bamboo and straw huts built for the occasion
 • **Bhelaghar**: Community houses for gathering and celebration
 
-**🍽️ TRADITIONAL FOODS:**
+** TRADITIONAL FOODS:**
 • **Pitha**: Various types of rice cakes
 • **Laru**: Sweet balls made with sesame and coconut
 • **Til Preparations**: Sesame-based traditional sweets
 • Community preparation and sharing of special dishes
 
-**🌅 MORNING RITUALS:**
+** MORNING RITUALS:**
 • **Meji Burning**: Sacred burning of bamboo structures at dawn
 • **Community Prayers**: Collective prayers for prosperity
 • **Feast Sharing**: Community feasts and food distribution
 
-**🎉 ACTIVITIES:**
+** ACTIVITIES:**
 • Traditional cooking competitions
 • Community feasts with neighbors and family
 • Cultural programs and folk performances`,
 
-            'kongali bihu': `🕯️ **KONGALI BIHU (Kati Bihu) - Spiritual Festival**
+            'kongali bihu': ` **KONGALI BIHU (Kati Bihu) - Spiritual Festival**
 
 • **Celebrated**: October (mid-October)
 • **Significance**: Spiritual and quiet festival during scarcity period
 • **Meaning**: Kongali means "poor" or "scarce" - time of limited resources
 • **Nature**: More contemplative and spiritual compared to other Bihus
 
-**🪔 LIGHTING RITUALS:**
+**LIGHTING RITUALS:**
 • **Akash Banti**: Lighting earthen lamps in paddy fields
 • **Home Lighting**: Earthen lamps lit in homes and courtyards
 • **Field Illumination**: Entire agricultural fields lit with traditional lamps
 
-**🙏 SPIRITUAL ACTIVITIES:**
+** SPIRITUAL ACTIVITIES:**
 • Prayers offered for good crops and prosperity
 • Remembering and honoring ancestors
 • Spiritual reflection and meditation
 • Community prayers for agricultural success
 
-**🍽️ TRADITIONAL FOODS:**
+** TRADITIONAL FOODS:**
 • Simple vegetarian meals
 • Minimal food preparation due to scarcity period
 • Focus on spiritual nourishment over elaborate feasting
 
-**🌾 AGRICULTURAL CONNECTION:**
+** AGRICULTURAL CONNECTION:**
 • Prayers for upcoming harvest season
 • Protection rituals for crops
 • Community solidarity during difficult times`,
 
-            'bohag bihu': `🌸 **BOHAG BIHU (Same as Rongali Bihu)**
+            'bohag bihu': ` **BOHAG BIHU (Same as Rongali Bihu)**
 This is another name for Rongali Bihu - the Assamese New Year celebration in April. See "Rongali Bihu" for complete details about this 7-day spring festival with Bihu dance, traditional games, and cultural celebrations.`,
 
-            'magh bihu': `🍽️ **MAGH BIHU (Same as Bhogali Bihu)**
+            'magh bihu': ` **MAGH BIHU (Same as Bhogali Bihu)**
 This is another name for Bhogali Bihu - the harvest festival in January. See "Bhogali Bihu" for complete details about this food festival with Meji burning, community feasts, and traditional preparations.`,
 
-            'kati bihu': `🕯️ **KATI BIHU (Same as Kongali Bihu)**
+            'kati bihu': ` **KATI BIHU (Same as Kongali Bihu)**
 This is another name for Kongali Bihu - the spiritual festival in October. See "Kongali Bihu" for complete details about this quiet festival with Akash Banti lamps and prayers for crops.`,
-            'ambubachi': '🕉️ **Ambubachi Mela** - Location: Kamakhya Temple, Nilachal Hill, Guwahati. Duration: 4 days in June (during monsoon). Significance: Annual menstruation period of Goddess Kamakhya. Attendees: Over 1 million devotees, sadhus, tantrics. Rituals: Temple remains closed for 3 days, reopens on 4th day. Cultural importance: Celebrates feminine power and fertility. Economic impact: Major boost to local tourism and economy.',
-            'jonbeel': '🤝 **Jonbeel Mela** - Location: Dayang Belguri, Morigaon district. Duration: 3 days in January. Unique feature: Ancient barter system (no money exchange). Communities: Tiwa, Karbi, Khasi tribes and plain dwellers. Items traded: Agricultural products, handmade crafts, traditional items. Cultural significance: Promotes inter-community harmony. Historical importance: Continues 500-year-old tradition.',
-            'majuli festival': '🌍 **Majuli Festival** - Location: Majuli Island (world\'s largest river island). Duration: 3 days in November. Highlights: Sattriya dance, mask-making, pottery. Cultural focus: Neo-Vaishnavite traditions. Attractions: Satra visits, traditional boat races. Crafts showcase: Handloom weaving, traditional masks.',
-            'ali-aye-ligang': '🌱 **Ali-Aye-Ligang** - Community: Mising tribe. Time: February (beginning of spring). Significance: Marks start of sowing season. Duration: 5 days. Rituals: Worship of Donyi-Polo (Sun-Moon), traditional dances. Traditional foods: Apong (rice beer), Purang Apin (special rice cake). Cultural activities: Gumrag dance, traditional songs.',
-            'bwisagu': '🎊 **Bwisagu (Bodo New Year)** - Community: Bodo people. Time: April (same time as Rongali Bihu). Duration: 7 days. Traditional dance: Bagurumba dance. Traditional dress: Dokhona (women), Gamsa (men). Special foods: Ondla (rice cake), Narzi (local brew).',
-            'kherai puja': '🙏 **Kherai Puja** - Community: Bodo people. Significance: Worship of Bathou deity (supreme god). Rituals: Performed by Doudini (female priest). Offerings: Flowers, rice, local fruits. Cultural importance: Preserves ancient Bodo religious traditions.',
-            'doul utsav': '🎨 **Doul Utsav (Assamese Holi)** - Main location: Barpeta (famous for celebrations). Duration: 2 days. Activities: Devotional songs, traditional dances. Religious significance: Celebrates Lord Krishna. Cultural fusion: Combines Vaishnavite traditions with local customs.',
-            'chavang kut': '🌾 **Chavang Kut** - Community: Kuki tribe. Time: November (post-harvest). Significance: Thanksgiving for successful harvest. Traditional dance: Kuki folk dances. Community activities: Feast sharing, cultural programs.'
+            'ambubachi': ' **Ambubachi Mela** - Location: Kamakhya Temple, Nilachal Hill, Guwahati. Duration: 4 days in June (during monsoon). Significance: Annual menstruation period of Goddess Kamakhya. Attendees: Over 1 million devotees, sadhus, tantrics. Rituals: Temple remains closed for 3 days, reopens on 4th day. Cultural importance: Celebrates feminine power and fertility. Economic impact: Major boost to local tourism and economy.',
+            'jonbeel': ' **Jonbeel Mela** - Location: Dayang Belguri, Morigaon district. Duration: 3 days in January. Unique feature: Ancient barter system (no money exchange). Communities: Tiwa, Karbi, Khasi tribes and plain dwellers. Items traded: Agricultural products, handmade crafts, traditional items. Cultural significance: Promotes inter-community harmony. Historical importance: Continues 500-year-old tradition.',
+            'majuli festival': ' **Majuli Festival** - Location: Majuli Island (world\'s largest river island). Duration: 3 days in November. Highlights: Sattriya dance, mask-making, pottery. Cultural focus: Neo-Vaishnavite traditions. Attractions: Satra visits, traditional boat races. Crafts showcase: Handloom weaving, traditional masks.',
+            'ali-aye-ligang': ' **Ali-Aye-Ligang** - Community: Mising tribe. Time: February (beginning of spring). Significance: Marks start of sowing season. Duration: 5 days. Rituals: Worship of Donyi-Polo (Sun-Moon), traditional dances. Traditional foods: Apong (rice beer), Purang Apin (special rice cake). Cultural activities: Gumrag dance, traditional songs.',
+            'bwisagu': ' **Bwisagu (Bodo New Year)** - Community: Bodo people. Time: April (same time as Rongali Bihu). Duration: 7 days. Traditional dance: Bagurumba dance. Traditional dress: Dokhona (women), Gamsa (men). Special foods: Ondla (rice cake), Narzi (local brew).',
+            'kherai puja': ' **Kherai Puja** - Community: Bodo people. Significance: Worship of Bathou deity (supreme god). Rituals: Performed by Doudini (female priest). Offerings: Flowers, rice, local fruits. Cultural importance: Preserves ancient Bodo religious traditions.',
+            'doul utsav': ' **Doul Utsav (Assamese Holi)** - Main location: Barpeta (famous for celebrations). Duration: 2 days. Activities: Devotional songs, traditional dances. Religious significance: Celebrates Lord Krishna. Cultural fusion: Combines Vaishnavite traditions with local customs.',
+            'chavang kut': ' **Chavang Kut** - Community: Kuki tribe. Time: November (post-harvest). Significance: Thanksgiving for successful harvest. Traditional dance: Kuki folk dances. Community activities: Feast sharing, cultural programs.'
         };
 
         for (const [festival, info] of Object.entries(festivals)) {
@@ -524,22 +530,60 @@ This is another name for Kongali Bihu - the spiritual festival in October. See "
 
     getFoodSpecificResponse(question) {
         const foods = {
-            'masor tenga': '🐟 **Masor Tenga** - Assam\'s signature sour fish curry made with fresh fish, tomatoes, and lemon. It\'s light, tangy, and served with rice as a staple dish in every Assamese household. The sourness comes from tomatoes or lemon, making it refreshing and healthy.',
-            'khar': '🥬 **Khar** - Traditional alkaline dish made with raw papaya, bottle gourd, and alkaline extract from banana ash. It\'s considered very healthy and is an essential part of Assamese meals. The alkaline nature aids digestion.',
-            'aloo pitika': '🥔 **Aloo Pitika** - Mashed potato preparation with mustard oil, onions, green chilies, and sometimes boiled eggs. It\'s a comfort food served with rice and is loved by all age groups in Assam.',
-            'pitha': '🍰 **Pitha** - Traditional rice cakes prepared during festivals, especially Bihu. Varieties include Til Pitha (sesame), Ghila Pitha (fried), Sunga Pitha (bamboo cooked), Tekeli Pitha (steamed). Each has unique preparation method and taste.',
-            'laru': '🍯 **Laru** - Sweet balls made during festivals. **Til Laru** (sesame balls) and **Narikol Laru** (coconut balls) are most popular. They\'re prepared with jaggery and are considered auspicious during celebrations.',
-            'jolpan': '🌾 **Jolpan** - Traditional breakfast items including Chira (flattened rice), Muri (puffed rice), Akhoi, served with curd, jaggery, or milk. It\'s light, nutritious, and perfect for morning meals.',
-            'assam tea': '☕ **Assam Tea** - World-famous black tea grown in Jorhat, Dibrugarh, Tezpur regions. Known for its strong, malty flavor and bright color. Prepared with milk and sugar, it\'s offered to guests and consumed multiple times daily.',
-            'bhap': '🥄 **Bhap** - Traditional steaming method considered the healthiest way of cooking. Vegetables, fish, and rice are steamed in banana leaves or special containers, preserving nutrients and natural flavors.',
-            'jolokia': '🌶️ **Jolokia (Ghost Pepper)** - World\'s hottest chili pepper native to Assam. Used sparingly in cooking for its intense heat and unique flavor. It\'s also used for medicinal purposes and pest control.',
-            'tenga': '🍋 **Tenga** - Sour preparation method using tomatoes, lemon, or other souring agents. Creates refreshing dishes perfect for Assam\'s climate. Masor Tenga is the most famous tenga preparation.'
+            'masor tenga': ' **Masor Tenga** - Assam\'s signature sour fish curry made with fresh fish, tomatoes, and lemon. It\'s light, tangy, and served with rice as a staple dish in every Assamese household. The sourness comes from tomatoes or lemon, making it refreshing and healthy.',
+            'khar': ' **Khar** - Traditional alkaline dish made with raw papaya, bottle gourd, and alkaline extract from banana ash. It\'s considered very healthy and is an essential part of Assamese meals. The alkaline nature aids digestion.',
+            'aloo pitika': ' **Aloo Pitika** - Mashed potato preparation with mustard oil, onions, green chilies, and sometimes boiled eggs. It\'s a comfort food served with rice and is loved by all age groups in Assam.',
+            'pitha': ' **Pitha** - Traditional rice cakes prepared during festivals, especially Bihu. Varieties include Til Pitha (sesame), Ghila Pitha (fried), Sunga Pitha (bamboo cooked), Tekeli Pitha (steamed). Each has unique preparation method and taste.',
+            'laru': ' **Laru** - Sweet balls made during festivals. **Til Laru** (sesame balls) and **Narikol Laru** (coconut balls) are most popular. They\'re prepared with jaggery and are considered auspicious during celebrations.',
+            'jolpan': ' **Jolpan** - Traditional breakfast items including Chira (flattened rice), Muri (puffed rice), Akhoi, served with curd, jaggery, or milk. It\'s light, nutritious, and perfect for morning meals.',
+            'assam tea': ' **Assam Tea** - World-famous black tea grown in Jorhat, Dibrugarh, Tezpur regions. Known for its strong, malty flavor and bright color. Prepared with milk and sugar, it\'s offered to guests and consumed multiple times daily.',
+            'bhap': ' **Bhap** - Traditional steaming method considered the healthiest way of cooking. Vegetables, fish, and rice are steamed in banana leaves or special containers, preserving nutrients and natural flavors.',
+            'jolokia': ' **Jolokia (Ghost Pepper)** - World\'s hottest chili pepper native to Assam. Used sparingly in cooking for its intense heat and unique flavor. It\'s also used for medicinal purposes and pest control.',
+            'tenga': ' **Tenga** - Sour preparation method using tomatoes, lemon, or other souring agents. Creates refreshing dishes perfect for Assam\'s climate. Masor Tenga is the most famous tenga preparation.'
         };
 
         for (const [food, info] of Object.entries(foods)) {
             if (question.includes(food)) {
                 return info;
             }
+        }
+        
+        return null;
+    }
+
+    getDeveloperSpecificResponse(question) {
+        const developerKeywords = ['developer', 'creator', 'designer', 'made', 'built', 'created', 'developed', 'who made', 'who built', 'who created', 'who developed', 'team', 'author', 'programmer', 'coder', 'engineer'];
+        
+        const hasKeyword = developerKeywords.some(keyword => question.includes(keyword));
+        
+        if (hasKeyword) {
+            return `👨‍💻 **Developers & Creators of Assam Local Guide:**
+
+** Project Team:**
+• **Shubhan Bora** - Lead Developer & Designer
+• **Rohit Das** - Co-Developer & Cultural Researcher
+• **Aryan Dutta** - Co-Developer & Data Specialist
+• **Kasturi Das** - Co-Developer &  Data cillector 
+• **Mozakkir Hussain** - Co-Developer & Data Integration Specialist
+
+**� Procject Vision:**
+This Assam Local Guide was created by a passionate team of 5 developers to preserve and share the rich cultural heritage of Assam with the world. Our diverse team combined technical expertise with deep cultural knowledge to build this comprehensive digital platform.
+
+** Technical Approach:**
+• Frontend-only architecture for reliability and performance
+• Comprehensive cultural database integration
+• User-friendly interface design and experience
+• Local data storage for offline capability
+• Responsive design for all devices
+
+** Built for Hackathon:**
+Created as a collaborative hackathon project to demonstrate how technology can preserve and promote cultural heritage. The system showcases Assam's festivals, food, traditions, and places through an interactive web platform.
+
+** Team Collaboration:**
+Each team member brought unique skills - from cultural research and data integration to frontend development and UI/UX design. This collaborative effort resulted in a comprehensive cultural preservation platform.
+
+** Acknowledgments:**
+Special thanks to the Assamese community for their rich cultural traditions that inspired this project, and to all team members for their dedication and hard work.`;
         }
         
         return null;
