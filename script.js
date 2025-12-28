@@ -562,9 +562,7 @@ This is another name for Kongali Bihu - the spiritual festival in October. See "
 ** Project Team:**
 • **Shubhan Bora** - Lead Developer & Designer
 • **Rohit Das** - Co-Developer & Cultural Researcher
-• **Aryan Dutta** - Co-Developer & Data Specialist
-• **Kasturi Das** - Co-Developer &  Data cillector 
-• **Mozakkir Hussain** - Co-Developer & Data Integration Specialist
+
 
 **� Procject Vision:**
 This Assam Local Guide was created by a passionate team of 5 developers to preserve and share the rich cultural heritage of Assam with the world. Our diverse team combined technical expertise with deep cultural knowledge to build this comprehensive digital platform.
